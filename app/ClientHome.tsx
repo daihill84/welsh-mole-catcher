@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { FaBug, FaMapMarkedAlt, FaPhoneAlt, FaEnvelope, FaCheckCircle } from 'react-icons/fa';
+import { FaBug, FaPhoneAlt, FaEnvelope, FaCheckCircle } from 'react-icons/fa';
 
 interface FormData {
   name: string;
@@ -112,7 +112,7 @@ export default function ClientHome() {
           <img
             src="/images/logo.png"
             alt="Welsh Mole Catcher Logo"
-            width={80} // Reduced size
+            width={80}
             height={80}
             className="mx-auto rounded-full border-4 border-[#a8c686] shadow-lg mb-6"
           />
@@ -152,7 +152,7 @@ export default function ClientHome() {
             <img
               src="/images/area.png"
               alt="Service Area in South and Mid Wales"
-              width={400} // Reduced size
+              width={400}
               height={250}
               className="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
             />
@@ -211,7 +211,7 @@ export default function ClientHome() {
               <img
                 src="/images/moleintrap.jpg"
                 alt="Mole in Trap"
-                width={200} // Reduced size
+                width={200}
                 height={150}
                 className="w-full rounded-md mb-4 mx-auto"
               />
@@ -226,14 +226,14 @@ export default function ClientHome() {
                 <img
                   src="/images/rat1.jpg"
                   alt="Rat Control"
-                  width={100} // Reduced size
+                  width={100}
                   height={70}
                   className="w-full rounded-md"
                 />
                 <img
                   src="/images/waspnest.jpg"
                   alt="Wasp Nest Removal"
-                  width={100} // Reduced size
+                  width={100}
                   height={70}
                   className="w-full rounded-md"
                 />
@@ -255,19 +255,19 @@ export default function ClientHome() {
           <div className="space-y-8">
             <div className="border-l-4 border-[#a8c686] pl-6">
               <p className="text-lg font-body text-[#4a3b30] italic leading-relaxed mb-4">
-                "Welsh Mole Catcher saved our farm from a severe mole problem. Their traditional methods worked wonders, and the team was incredibly professional and knowledgeable. We’ve had no issues since!"
+                Welsh Mole Catcher saved our farm from a severe mole problem. Their traditional methods worked wonders, and the team was incredibly professional and knowledgeable. We\'ve had no issues since!
               </p>
               <p className="text-lg font-heading text-[#4a3b30]">- Sarah T., Farmer in Carmarthenshire</p>
             </div>
             <div className="border-l-4 border-[#a8c686] pl-6">
               <p className="text-lg font-body text-[#4a3b30] italic leading-relaxed mb-4">
-                "I was impressed by how quickly they handled a wasp nest on our property. The service was eco-friendly, and they took the time to explain everything. Highly recommend their pest control services."
+                I was impressed by how quickly they handled a wasp nest on our property. The service was eco-friendly, and they took the time to explain everything. Highly recommend their pest control services.
               </p>
               <p className="text-lg font-heading text-[#4a3b30]">- James L., Homeowner in Powys</p>
             </div>
             <div className="border-l-4 border-[#a8c686] pl-6">
               <p className="text-lg font-body text-[#4a3b30] italic leading-relaxed mb-4">
-                "As a rural estate manager, I needed a reliable pest control solution. Welsh Mole Catcher exceeded my expectations with their personalized approach and effective results."
+                As a rural estate manager, I needed a reliable pest control solution. Welsh Mole Catcher exceeded my expectations with their personalized approach and effective results.
               </p>
               <p className="text-lg font-heading text-[#4a3b30]">- Emma R., Estate Manager in Ceredigion</p>
             </div>
@@ -293,7 +293,7 @@ export default function ClientHome() {
                 <img
                   src={img.src}
                   alt={img.alt}
-                  width={200} // Reduced size
+                  width={200}
                   height={150}
                   className="w-full rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer"
                   onClick={() => openModal(img.src)}
@@ -378,7 +378,7 @@ export default function ClientHome() {
             </button>
             {submitStatus === 'success' && (
               <p className="text-center text-[#4a3b30] font-heading text-lg mt-4">
-                Message sent! We'll get back to you soon.
+                Message sent! We\'ll get back to you soon.
               </p>
             )}
           </form>

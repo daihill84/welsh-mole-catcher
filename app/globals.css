@@ -1,26 +1,74 @@
-@import "tailwindcss";
+/* Tailwind Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Custom Styles */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: #fefbf6;
+}
+
+/* Custom Fonts */
+.font-heading {
+  font-family: 'Georgia', serif;
+  font-weight: 400;
+}
+
+.font-body {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-weight: 300;
+}
+
+/* Ensure images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Modal Styles */
+.fixed.show {
+  display: flex !important;
+}
+
+/* Footer Icon Styles */
+footer a img {
+  transition: opacity 0.3s ease;
+}
+
+footer a img:hover {
+  opacity: 0.8;
+}
+
+/* Masonry Grid for Gallery */
+.columns-2 {
+  column-count: 2;
+}
+
+.columns-3 {
+  column-count: 3;
+}
+
+.break-inside-avoid {
+  break-inside: avoid;
+}
+
+/* Form Input Focus Styles */
+input:focus, textarea:focus {
+  box-shadow: 0 0 0 3px rgba(168, 198, 134, 0.3);
+}
+
+/* Smooth Scroll Behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Testimonial Border Styling */
+.border-l-4 {
+  border-left-width: 4px;
+}
+
+/* Consistent Spacing for Icons in Why Choose Us */
+.flex.items-start svg {
+  flex-shrink: 0;
 }

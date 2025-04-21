@@ -1,5 +1,3 @@
-'use client';
-
 import React, { Component, ReactNode } from 'react';
 
 interface ErrorBoundaryProps {
@@ -8,17 +6,16 @@ interface ErrorBoundaryProps {
 
 interface ErrorBoundaryState {
   hasError: boolean;
-  error: Error | null;
 }
 
-export default class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
+class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
   constructor(props: ErrorBoundaryProps) {
     super(props);
-    this.state = { hasError: false, error: null };
+    this.state = { hasError: false };
   }
 
-  static getDerivedStateFromError(error: Error) {
-    return { hasError: true, error };
+  static getDerivedStateFromError(_error: Error): ErrorBoundaryState {
+    return { hasError: true };
   }
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
@@ -27,13 +24,10 @@ export default class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBo
 
   render() {
     if (this.state.hasError) {
-      return (
-        <div>
-          <h1>Something went wrong.</h1>
-          <p>{this.state.error?.message}</p>
-        </div>
-      );
+      return <h1>Something went wrong. Please try again later.</h1>;
     }
     return this.props.children;
   }
 }
+
+export default ErrorBoundary;

@@ -1,12 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
+  basePath: '/welsh-mole-catcher',
+  assetPrefix: '/welsh-mole-catcher/',
   trailingSlash: true,
   images: {
     unoptimized: true,
-  },
-  eslint: {
-    ignoreDuringBuilds: true, // Temporarily bypass ESLint during build
   },
 };
 

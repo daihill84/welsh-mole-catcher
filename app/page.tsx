@@ -11,7 +11,7 @@ interface FormData {
   message: string;
 }
 
-export default function ClientHome() {
+export default function Home() {
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -61,20 +61,22 @@ export default function ClientHome() {
 
   const openModal = (imageSrc: string) => {
     setModalImage(imageSrc);
-    document.getElementById('modal')?.classList.add('show');
+    document.getElementById('modal')?.classList.remove('hidden');
   };
 
   const closeModal = () => {
     setModalImage(null);
-    document.getElementById('modal')?.classList.remove('show');
+    document.getElementById('modal')?.classList.add('hidden');
   };
+
+  const basePath = '/welsh-mole-catcher';
 
   return (
     <div className="main-container">
       {/* Navigation */}
       <nav className="nav-container">
         <div className="nav-content">
-          <Link href="/" className="nav-logo">
+          <Link href={`${basePath}/`} className="nav-logo">
             Welsh Mole Catcher
           </Link>
           <button
@@ -85,12 +87,12 @@ export default function ClientHome() {
             ☰
           </button>
           <ul
-            className={`nav-menu ${isMenuOpen ? 'open' : ''} sm:flex font-heading`}
+            className={`nav-menu ${isMenuOpen ? 'open' : 'hidden'} sm:flex font-heading`}
           >
-            {['Home', 'Services', 'Gallery', 'Contact', 'FAQs'].map((item) => (
+            {['home', 'services', 'gallery', 'contact', 'faqs'].map((item) => (
               <li key={item} className="nav-item">
-                <Link href={`#${item.toLowerCase()}`} className="nav-link">
-                  {item}
+                <Link href={`${basePath}/#${item}`} className="nav-link">
+                  {item.charAt(0).toUpperCase() + item.slice(1)}
                 </Link>
               </li>
             ))}
@@ -102,12 +104,12 @@ export default function ClientHome() {
       <section
         id="home"
         className="hero-section"
-        style={{ backgroundImage: `url("/images/moles_collage.jpg")` }}
+        style={{ backgroundImage: `url("${basePath}/images/moles_collage.jpg")` }}
       >
         <div className="hero-overlay"></div>
         <div className="hero-content">
           <img
-            src="/images/logo.png"
+            src={`${basePath}/images/logo.png`}
             alt="Welsh Mole Catcher Logo"
             width="80"
             height="80"
@@ -117,7 +119,7 @@ export default function ClientHome() {
           <p className="hero-subtitle">
             Trusted, Eco-Friendly Solutions for South & Mid Wales
           </p>
-          <Link href="#contact" className="hero-button">
+          <Link href={`${basePath}/#contact`} className="hero-button">
             Get in Touch
           </Link>
         </div>
@@ -154,7 +156,7 @@ export default function ClientHome() {
           </div>
           <div className="about-image-container">
             <img
-              src="/images/area.png"
+              src={`${basePath}/images/area.png`}
               alt="Service Area in South and Mid Wales"
               width="400"
               height="250"
@@ -216,7 +218,7 @@ export default function ClientHome() {
               <FaBug className="service-icon" />
               <h3 className="service-title">Mole Trapping</h3>
               <img
-                src="/images/moleintrap.jpg"
+                src={`${basePath}/images/moleintrap.jpg`}
                 alt="Mole in Trap"
                 width="200"
                 height="150"
@@ -234,14 +236,14 @@ export default function ClientHome() {
               <h3 className="service-title">Pest Control</h3>
               <div className="service-image-grid">
                 <img
-                  src="/images/rat1.jpg"
+                  src={`${basePath}/images/rat1.jpg`}
                   alt="Rat Control"
                   width="100"
                   height="70"
                   className="service-image"
                 />
                 <img
-                  src="/images/waspnest.jpg"
+                  src={`${basePath}/images/waspnest.jpg`}
                   alt="Wasp Nest Removal"
                   width="100"
                   height="70"
@@ -268,7 +270,7 @@ export default function ClientHome() {
               <p className="testimonial-text">
                 Welsh Mole Catcher saved our farm from a severe mole problem.
                 Their traditional methods worked wonders, and the team was
-                incredibly professional and knowledgeable. We’ve had no issues
+                incredibly professional and knowledgeable. We&apos;ve had no issues
                 since!
               </p>
               <p className="testimonial-author">
@@ -305,11 +307,11 @@ export default function ClientHome() {
           <h2 className="section-title">Our Work</h2>
           <div className="gallery-grid">
             {[
-              { src: '/images/moles_collage.jpg', alt: 'Moles caught on Welsh farms' },
-              { src: '/images/farm_moles.jpg', alt: 'Dead moles on a Welsh farm' },
-              { src: '/images/farm_son.jpg', alt: 'Father and son team mole trapping' },
-              { src: '/images/farm_john_mole.jpg', alt: 'Mole catching expert in field' },
-              { src: '/images/moleintrap.jpg', alt: 'Mole in trap' },
+              { src: `${basePath}/images/moles_collage.jpg`, alt: 'Moles caught on Welsh farms' },
+              { src: `${basePath}/images/farm_moles.jpg`, alt: 'Dead moles on a Welsh farm' },
+              { src: `${basePath}/images/farm_son.jpg`, alt: 'Father and son team mole trapping' },
+              { src: `${basePath}/images/farm_john_mole.jpg`, alt: 'Mole catching expert in field' },
+              { src: `${basePath}/images/moleintrap.jpg`, alt: 'Mole in trap' },
             ].map((image, index) => (
               <div key={index} className="gallery-item">
                 <img
@@ -324,7 +326,7 @@ export default function ClientHome() {
             ))}
           </div>
         </div>
-        <div id="modal" className="modal">
+        <div id="modal" className="modal hidden">
           {modalImage && (
             <img
               src={modalImage}
@@ -412,7 +414,7 @@ export default function ClientHome() {
               <h3 className="faq-question">What areas do you cover?</h3>
               <p className="faq-answer">
                 We provide our services across South and Mid Wales, catering to
-                rural farms, countryside homes, and estates. If you’re unsure
+                rural farms, countryside homes, and estates. If you&apos;re unsure
                 whether we cover your area, feel free to contact us for
                 confirmation.
               </p>
@@ -462,10 +464,10 @@ export default function ClientHome() {
           <div className="footer-section">
             <h3 className="footer-title">Quick Links</h3>
             <ul className="footer-links">
-              {['Home', 'Services', 'Gallery', 'Contact', 'FAQs'].map((item) => (
+              {['home', 'services', 'gallery', 'contact', 'faqs'].map((item) => (
                 <li key={item}>
-                  <Link href={`#${item.toLowerCase()}`} className="footer-link">
-                    {item}
+                  <Link href={`${basePath}/#${item}`} className="footer-link">
+                    {item.charAt(0).toUpperCase() + item.slice(1)}
                   </Link>
                 </li>
               ))}
@@ -495,7 +497,7 @@ export default function ClientHome() {
                 rel="noopener noreferrer"
               >
                 <img
-                  src="/icons/facebook_logo.png"
+                  src={`${basePath}/icons/facebook_logo.png`}
                   alt="Facebook"
                   width="24"
                   height="24"
@@ -507,7 +509,7 @@ export default function ClientHome() {
                 rel="noopener noreferrer"
               >
                 <img
-                  src="/icons/Instagram_icon.png"
+                  src={`${basePath}/icons/Instagram_icon.png`}
                   alt="Instagram"
                   width="24"
                   height="24"
@@ -519,7 +521,7 @@ export default function ClientHome() {
                 rel="noopener noreferrer"
               >
                 <img
-                  src="/icons/linked-in.jpg"
+                  src={`${basePath}/icons/linked-in.jpg`}
                   alt="LinkedIn"
                   width="24"
                   height="24"
@@ -531,7 +533,7 @@ export default function ClientHome() {
                 rel="noopener noreferrer"
               >
                 <img
-                  src="/icons/tube-icon.jpg"
+                  src={`${basePath}/icons/tube-icon.jpg`}
                   alt="YouTube"
                   width="24"
                   height="24"

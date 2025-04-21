@@ -1,13 +1,14 @@
 {
   "name": "newsite",
   "version": "0.1.0",
-  "private": true,
   "homepage": "https://daihill84.github.io/welsh-mole-catcher/",
+  "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
-    "deploy": "next build && gh-pages -d out"
+    "deploy": "npm run build && gh-pages -d out",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
     "next": "14.2.15",
@@ -19,12 +20,13 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "autoprefixer": "^10.4.20",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
     "eslint": "^8",
     "eslint-config-next": "14.2.15",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
     "gh-pages": "^6.1.1",
-    "postcss": "^8.4.47",
-    "tailwindcss": "^3.4.14",
     "typescript": "^5"
   }
 }

@@ -1,23 +1,15 @@
-/* Tailwind Directives */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* Custom Styles */
 body {
   margin: 0;
-  background: #fefbf6;
 }
 
 /* Custom Fonts */
 .font-heading {
   font-family: 'Georgia', serif;
-  font-weight: 400;
 }
 
 .font-body {
-  font-family: 'Helvetica', 'Arial', sans-serif;
-  font-weight: 300;
+  font-family: 'Helvetica', 'Arial', 'sans-serif';
 }
 
 /* Ensure images are responsive */

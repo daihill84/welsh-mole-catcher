@@ -34,6 +34,9 @@ jobs:
       - name: Create .nojekyll
         run: touch ./out/.nojekyll
 
+      - name: Add Custom Domain
+        run: echo 'www.welshmolecatcher.co.uk' > ./out/CNAME
+
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -42,7 +45,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: 'https://www.welshmolecatcher.co.uk'
     runs-on: ubuntu-latest
     needs: build
     steps:

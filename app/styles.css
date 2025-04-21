@@ -219,8 +219,8 @@ body {
 }
 
 .modal img {
-  max-width: 90%; /* Replace max-w-[90%] */
-  max-height: 90%; /* Replace max-h-[90%] */
+  max-width: 90%;
+  max-height: 90%;
   @apply rounded-lg;
 }
 

@@ -5,7 +5,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '/welsh-mole-catcher', // Replace 'newsite' with your repository name
 };
 
 module.exports = nextConfig;

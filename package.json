@@ -12,18 +12,18 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "autoprefixer": "^10.4.20",
-    "next": "^14.2.0",
-    "postcss": "^8.4.47",
+    "next": "^14.2.25",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.12.0",
-    "tailwindcss": "^2.2.19"
+    "tailwindcss": "^2.2.19",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47"
   },
   "devDependencies": {
-    "@types/node": "22.14.1",
-    "@types/react": "19.1.2",
     "eslint": "^8.57.0",
-    "eslint-config-next": "^14.2.0"
+    "eslint-config-next": "^14.2.0",
+    "@types/react": "^18.3.11",
+    "@types/node": "^20.16.11"
   }
 }

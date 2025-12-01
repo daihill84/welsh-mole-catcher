@@ -8,32 +8,62 @@ export default function NavBar() {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="nav-container">
-      <div className="nav-content">
-        <a href="/" className="nav-logo">
+    <nav className="w-full bg-white shadow-md fixed top-0 left-0 z-50">
+      <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+        <a href="/" className="text-2xl font-bold text-green-700">
           Welsh Mole Catcher
         </a>
-        <button className="nav-menu-button" onClick={toggleMenu}>
+
+        <button
+          className="text-3xl md:hidden text-green-700"
+          onClick={toggleMenu}
+        >
           ☰
         </button>
-        <ul className={`nav-menu ${isOpen ? 'open' : ''}`}>
-          <li className="nav-item">
-            <a href="#about" className="nav-link" onClick={toggleMenu}>
+
+        <ul
+          className={`md:flex md:items-center md:space-x-8 font-medium text-green-800 transition-all duration-300 ease-in-out ${
+            isOpen
+              ? 'block mt-4 bg-white p-4 rounded-xl shadow-lg'
+              : 'hidden md:flex'
+          }`}
+        >
+          <li>
+            <a
+              href="#about"
+              className="hover:text-green-600 block py-2"
+              onClick={toggleMenu}
+            >
               About
             </a>
           </li>
-          <li className="nav-item">
-            <a href="#services" className="nav-link" onClick={toggleMenu}>
+
+          <li>
+            <a
+              href="#services"
+              className="hover:text-green-600 block py-2"
+              onClick={toggleMenu}
+            >
               Services
             </a>
           </li>
-          <li className="nav-item">
-            <a href="#contact" className="nav-link" onClick={toggleMenu}>
+
+          <li>
+            <a
+              href="#contact"
+              className="hover:text-green-600 block py-2"
+              onClick={toggleMenu}
+            >
               Contact
             </a>
           </li>
-          <li className="nav-item">
-            <a href="/privacy-policy" className="nav-link" onClick={toggleMenu}>
+
+          <li>
+            <a
+              href="/privacy-policy"
+              className="hover:text-green-600 block py-2"
+              onClick={toggleMenu}
+            >
               Privacy Policy
             </a>
           </li>

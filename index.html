@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welsh Mole Catcher | Traditional Poison-Free Pest Control Wales</title>
     
+    <title>Welsh Mole Catcher | Traditional Poison-Free Pest Control Wales</title>
     <meta name="description" content="Expert traditional mole catching & pest control in Wales. Red Tractor friendly & poison-free. Serving Brecon, Neath, and Merthyr. Call 07375 303124 today!">
-    <meta name="keywords" content="mole catcher wales, poison free mole control, pest control brecon, pest control neath, mole catcher merthyr, red tractor pest control">
+    <meta name="keywords" content="mole catcher wales, poison free mole control, pest control brecon, pest control neath, mole catcher merthyr, red tractor pest control, farm pest control wales">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Welsh Mole Catcher - Professional Poison-Free Pest Control">
+    <meta property="og:description" content="Local traditional mole catching and pest control from Brecon to Merthyr and Neath. Call 07375 303124 for expert help.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.welshmolecatcher.co.uk/">
+    <meta property="og:image" content="https://www.welshmolecatcher.co.uk/images/logo.png">
 
     <script type="application/ld+json">
     {
@@ -16,8 +23,16 @@
       "telephone": "07375 303124",
       "url": "https://www.welshmolecatcher.co.uk/",
       "image": "https://www.welshmolecatcher.co.uk/images/logo.png",
-      "areaServed": ["Brecon", "Merthyr Tydfil", "Neath", "Ammanford", "Glynneath"],
-      "description": "Traditional, poison-free mole and pest control for farms and gardens across South and Mid Wales."
+      "areaServed": [
+        {"@type": "City", "name": "Brecon"},
+        {"@type": "City", "name": "Merthyr Tydfil"},
+        {"@type": "City", "name": "Neath"},
+        {"@type": "City", "name": "Ammanford"},
+        {"@type": "City", "name": "Glynneath"},
+        {"@type": "City", "name": "Sennybridge"},
+        {"@type": "City", "name": "Hay-on-Wye"}
+      ],
+      "description": "Traditional, poison-free mole and pest control for farms and gardens across South and Mid Wales. Specialized in Red Tractor compliance."
     }
     </script>
     
@@ -33,39 +48,40 @@
         .nav-links a:hover { color: #a8c686; }
 
         .hero { 
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/moles_collage.jpg'); 
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('images/moles_collage.jpg'); 
             background-size: cover; background-position: center; height: 65vh; 
             display: flex; flex-direction: column; justify-content: center; align-items: center; 
             text-align: center; color: #fff; padding: 20px;
         }
-        .hero h1 { font-size: clamp(2.5rem, 8vw, 4rem); margin-bottom: 10px; }
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); margin-bottom: 10px; text-shadow: 2px 2px 8px rgba(0,0,0,0.5); }
         .hero p { font-size: 1.5rem; color: #a8c686; margin-bottom: 25px; font-weight: 600; }
-        .cta-btn { background: #a8c686; color: #23211d; padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.2rem; transition: transform 0.2s; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
-        .cta-btn:hover { transform: scale(1.05); background: #fff; }
+        .cta-btn { background: #a8c686; color: #23211d; padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.25rem; transition: all 0.2s; box-shadow: 0 4px 15px rgba(0,0,0,0.4); }
+        .cta-btn:hover { transform: scale(1.05); background: #fff; box-shadow: 0 6px 20px rgba(0,0,0,0.5); }
 
         .container { max-width: 1100px; margin: 60px auto; padding: 0 20px; text-align: center; }
         h2 { font-size: 2.5rem; margin-bottom: 40px; border-bottom: 4px solid #a8c686; display: inline-block; padding-bottom: 10px; color: #23211d; }
         
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 40px; }
-        .card { background: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: left; }
+        .card { background: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: left; transition: transform 0.3s; }
+        .card:hover { transform: translateY(-5px); }
         .card-img { width: 100%; height: 220px; object-fit: cover; }
         .card-content { padding: 30px; }
         .card h3 { margin-bottom: 15px; color: #23211d; font-size: 1.6rem; }
 
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-top: 40px; }
-        .gallery-img { width: 100%; height: 220px; object-fit: cover; border-radius: 12px; transition: opacity 0.3s; }
-        .gallery-img:hover { opacity: 0.8; }
+        .gallery-img { width: 100%; height: 220px; object-fit: cover; border-radius: 12px; transition: all 0.3s; }
+        .gallery-img:hover { opacity: 0.9; transform: scale(1.02); }
 
-        .contact-section { background: #23211d; color: #fff; padding: 80px 20px; text-align: center; }
+        .contact-section { background: #23211d; color: #fff; padding: 100px 20px; text-align: center; }
         .contact-section h2 { color: #fff; }
-        .phone-display { font-size: clamp(2rem, 7vw, 3.2rem); color: #a8c686; display: block; margin: 25px 0; text-decoration: none; font-weight: 800; transition: color 0.3s; }
+        .phone-display { font-size: clamp(2.2rem, 7vw, 3.5rem); color: #a8c686; display: block; margin: 25px 0; text-decoration: none; font-weight: 800; transition: color 0.3s; }
         .phone-display:hover { color: #fff; }
-        .area-map { max-width: 550px; width: 100%; border-radius: 15px; margin-top: 40px; border: 3px solid #a8c686; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .area-map { max-width: 600px; width: 100%; border-radius: 15px; margin-top: 40px; border: 3px solid #a8c686; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
         
         footer { background: #1a1916; color: #777; padding: 50px 20px; text-align: center; font-size: 1rem; }
         .footer-brand { color: #a8c686; font-weight: bold; margin-bottom: 10px; display: block; }
 
-        @media (max-width: 600px) { .nav-links { display: none; } .hero { height: 50vh; } }
+        @media (max-width: 600px) { .nav-links { display: none; } .hero { height: 50vh; } h2 { font-size: 2rem; } }
     </style>
 </head>
 <body>
@@ -95,14 +111,14 @@
                 <img src="images/moleintrap.jpg" alt="Traditional Mole Trapping Wales" class="card-img">
                 <div class="card-content">
                     <h3>Specialist Mole Trapping</h3>
-                    <p>We use traditional, professional trapping methods that are 100% poison-free. Safe for your pets, horses, and livestock. Guaranteed clearance for domestic gardens, estates, and silage fields.</p>
+                    <p>We use traditional, professional trapping methods that are 100% poison-free. Safe for your pets, horses, and livestock. Guaranteed clearance for domestic gardens, estates, and silage fields across Brecon, Merthyr, and Neath.</p>
                 </div>
             </div>
             <div class="card">
                 <img src="images/rat1.jpg" alt="Farm Pest Control Wales" class="card-img">
                 <div class="card-content">
                     <h3>Agricultural Pest Control</h3>
-                    <p>Red Tractor friendly rodent control and wasp nest removal. We provide discreet, effective solutions for farms and rural businesses across the Valleys and Mid Wales.</p>
+                    <p>Red Tractor friendly rodent control and wasp nest removal. We provide discreet, effective solutions for farms and rural businesses across the South Wales Valleys and Mid Wales.</p>
                 </div>
             </div>
         </div>
@@ -120,7 +136,7 @@
 
     <section class="contact-section">
         <h2>Expert Help Across Wales</h2>
-        <p>Serving Brecon, Neath, Merthyr, Ammanford & surrounding areas.</p>
+        <p>Serving Brecon, Merthyr Tydfil, Neath, Glynneath & Ammanford.</p>
         <a href="tel:07375303124" class="phone-display">07375 303124</a>
         
         <img src="images/area.png" alt="Welsh Town and Country Service Area Map" class="area-map">

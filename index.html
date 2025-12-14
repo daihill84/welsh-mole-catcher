@@ -76,11 +76,11 @@
         
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         .card { background: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: left; }
-        .card-img { width: 100%; height: 230px; object-fit: cover; }
+        .card-img { width: 100%; height: 230px; object-fit: cover; background-color: #eee; }
         .card-content { padding: 30px; }
 
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-top: 40px; }
-        .gallery-img { width: 100%; height: 220px; object-fit: cover; border-radius: 12px; }
+        .gallery-img { width: 100%; height: 220px; object-fit: cover; border-radius: 12px; background-color: #eee; }
 
         .contact-section { background: #23211d; color: #fff; padding: 100px 20px; text-align: center; }
         .phone-display { font-size: clamp(2.2rem, 7vw, 3.5rem); color: #a8c686; display: block; margin: 25px 0; text-decoration: none; font-weight: 800; }
@@ -90,14 +90,15 @@
 
         @media (max-width: 600px) {
             .nav-links { display: none; }
+            .hero { height: 50vh; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#" class="brand-link">
-            <img src="images/logo.png" alt="Logo" class="logo-nav">
+        <a href="/" class="brand-link">
+            <img src="images/logo.png" alt="Welsh Mole Catcher Logo" class="logo-nav">
             Welsh Mole Catcher
         </a>
         <div class="nav-links">
@@ -124,10 +125,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="
-
-http://googleusercontent.com/image_collection/image_retrieval/4109478312240278762_0
-" alt="Wasp Nest Removal" class="card-img">
+                <img src="images/farm_moles.jpg" alt="Wasp Nest Removal" class="card-img">
                 <div class="card-content">
                     <h3>Wasps & Hornets</h3>
                     <p>Fast, professional removal of wasp nests and hornet infestations. We provide safe treatments for domestic and commercial eaves and lofts.</p>
@@ -146,10 +144,10 @@ http://googleusercontent.com/image_collection/image_retrieval/410947831224027876
     <div class="container" id="gallery">
         <h2>Action & Equipment</h2>
         <div class="gallery-grid">
-            <img src="http://googleusercontent.com/image_collection/image_retrieval/14148068324200211593_0" alt="Traditional Equipment" class="gallery-img">
-            <img src="images/farm_moles.jpg" alt="Agricultural Clearance" class="gallery-img">
-            <img src="images/farm_john_mole.jpg" alt="Traditional Methods" class="gallery-img">
-            <img src="http://googleusercontent.com/image_collection/image_retrieval/1249919886921715769_0" alt="Local Service Van" class="gallery-img">
+            <img src="images/farm_son.jpg" alt="Service in Action" class="gallery-img">
+            <img src="images/farm_john_mole.jpg" alt="Agricultural Clearance" class="gallery-img">
+            <img src="images/moles_collage.jpg" alt="Traditional Methods" class="gallery-img">
+            <img src="images/moleintrap.jpg" alt="Success in the Field" class="gallery-img">
         </div>
     </div>
 

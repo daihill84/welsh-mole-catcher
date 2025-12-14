@@ -3,84 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welsh Mole Catcher | Traditional Pest Control Wales</title>
+    <title>Welsh Mole Catcher | Traditional Poison-Free Pest Control Wales</title>
     
-    <meta name="description" content="Traditional, poison-free mole catching & pest control in Wales. Farm & garden specialists. Call 07375 303124 today!">
-    <meta name="keywords" content="mole catcher wales, mole control, pest control brecon, pest control neath, mole catcher merthyr">
+    <meta name="description" content="Expert traditional mole catching & pest control in Wales. Red Tractor friendly & poison-free. Serving Brecon, Neath, and Merthyr. Call 07375 303124 today!">
+    <meta name="keywords" content="mole catcher wales, poison free mole control, pest control brecon, pest control neath, mole catcher merthyr, red tractor pest control">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "PestControlService",
+      "name": "Welsh Mole Catcher (Welsh Town & Country)",
+      "telephone": "07375 303124",
+      "url": "https://www.welshmolecatcher.co.uk/",
+      "image": "https://www.welshmolecatcher.co.uk/images/logo.png",
+      "areaServed": ["Brecon", "Merthyr Tydfil", "Neath", "Ammanford", "Glynneath"],
+      "description": "Traditional, poison-free mole and pest control for farms and gardens across South and Mid Wales."
+    }
+    </script>
     
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; background-color: #fcfbf7; color: #2d2a26; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; background-color: #fcfbf7; color: #2d2a26; scroll-behavior: smooth; }
         
-        nav { background: #23211d; padding: 1.2rem; position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-around; align-items: center; }
-        .logo { color: #a8c686; font-size: 1.5rem; font-weight: bold; text-decoration: none; }
-        .nav-links a { color: #fff; text-decoration: none; margin-left: 20px; font-weight: 600; }
+        nav { background: #23211d; padding: 1.2rem; position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-around; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        .logo-container { display: flex; align-items: center; text-decoration: none; }
+        .logo-img { height: 40px; margin-right: 10px; border-radius: 50%; border: 1px solid #a8c686; }
+        .logo-text { color: #a8c686; font-size: 1.5rem; font-weight: bold; }
+        .nav-links a { color: #fff; text-decoration: none; margin-left: 20px; font-weight: 600; transition: color 0.3s; }
+        .nav-links a:hover { color: #a8c686; }
 
         .hero { 
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/moles_collage.jpg'); 
-            background-size: cover; background-position: center; height: 60vh; 
+            background-size: cover; background-position: center; height: 65vh; 
             display: flex; flex-direction: column; justify-content: center; align-items: center; 
             text-align: center; color: #fff; padding: 20px;
         }
-        .hero h1 { font-size: 3.5rem; margin-bottom: 10px; }
-        .hero p { font-size: 1.5rem; color: #a8c686; margin-bottom: 25px; }
-        .cta-btn { background: #a8c686; color: #23211d; padding: 15px 30px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 1.2rem; }
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 4rem); margin-bottom: 10px; }
+        .hero p { font-size: 1.5rem; color: #a8c686; margin-bottom: 25px; font-weight: 600; }
+        .cta-btn { background: #a8c686; color: #23211d; padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.2rem; transition: transform 0.2s; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        .cta-btn:hover { transform: scale(1.05); background: #fff; }
 
-        .container { max-width: 1000px; margin: 50px auto; padding: 0 20px; text-align: center; }
-        h2 { font-size: 2.5rem; margin-bottom: 30px; border-bottom: 4px solid #a8c686; display: inline-block; padding-bottom: 10px; }
+        .container { max-width: 1100px; margin: 60px auto; padding: 0 20px; text-align: center; }
+        h2 { font-size: 2.5rem; margin-bottom: 40px; border-bottom: 4px solid #a8c686; display: inline-block; padding-bottom: 10px; color: #23211d; }
         
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-        .card { background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: left; }
-        .card h3 { margin-bottom: 15px; color: #23211d; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 40px; }
+        .card { background: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: left; }
+        .card-img { width: 100%; height: 220px; object-fit: cover; }
+        .card-content { padding: 30px; }
+        .card h3 { margin-bottom: 15px; color: #23211d; font-size: 1.6rem; }
 
-        .contact-section { background: #23211d; color: #fff; padding: 60px 20px; text-align: center; }
-        .phone-display { font-size: 2.5rem; color: #a8c686; display: block; margin: 20px 0; text-decoration: none; font-weight: bold; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-top: 40px; }
+        .gallery-img { width: 100%; height: 220px; object-fit: cover; border-radius: 12px; transition: opacity 0.3s; }
+        .gallery-img:hover { opacity: 0.8; }
+
+        .contact-section { background: #23211d; color: #fff; padding: 80px 20px; text-align: center; }
+        .contact-section h2 { color: #fff; }
+        .phone-display { font-size: clamp(2rem, 7vw, 3.2rem); color: #a8c686; display: block; margin: 25px 0; text-decoration: none; font-weight: 800; transition: color 0.3s; }
+        .phone-display:hover { color: #fff; }
+        .area-map { max-width: 550px; width: 100%; border-radius: 15px; margin-top: 40px; border: 3px solid #a8c686; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
         
-        footer { background: #1a1916; color: #777; padding: 30px; text-align: center; font-size: 0.9rem; }
+        footer { background: #1a1916; color: #777; padding: 50px 20px; text-align: center; font-size: 1rem; }
+        .footer-brand { color: #a8c686; font-weight: bold; margin-bottom: 10px; display: block; }
 
-        @media (max-width: 600px) { .hero h1 { font-size: 2.2rem; } .nav-links { display: none; } }
+        @media (max-width: 600px) { .nav-links { display: none; } .hero { height: 50vh; } }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#" class="logo">Welsh Mole Catcher</a>
+        <a href="#" class="logo-container">
+            <img src="images/logo.png" alt="Welsh Mole Catcher Logo" class="logo-img">
+            <span class="logo-text">Welsh Mole Catcher</span>
+        </a>
         <div class="nav-links">
             <a href="#services">Services</a>
+            <a href="#gallery">Gallery</a>
             <a href="tel:07375303124">07375 303124</a>
         </div>
     </nav>
 
     <header class="hero">
-        <h1>Welsh Mole Catcher</h1>
-        <p>Traditional • Poison-Free • Local Expert</p>
-        <a href="tel:07375303124" class="cta-btn">Call: 07375 303124</a>
+        <h1>Traditional Mole Control</h1>
+        <p>Poison-Free • Red Tractor Friendly • Expert Clearance</p>
+        <a href="tel:07375303124" class="cta-btn">Call Today: 07375 303124</a>
     </header>
 
     <div class="container" id="services">
         <h2>Professional Services</h2>
         <div class="services-grid">
             <div class="card">
-                <h3>Traditional Mole Catching</h3>
-                <p>We use professional trapping methods that are 100% poison-free. Safe for your pets, livestock, and children. Guaranteed results for gardens and farms across South and Mid Wales.</p>
+                <img src="images/moleintrap.jpg" alt="Traditional Mole Trapping Wales" class="card-img">
+                <div class="card-content">
+                    <h3>Specialist Mole Trapping</h3>
+                    <p>We use traditional, professional trapping methods that are 100% poison-free. Safe for your pets, horses, and livestock. Guaranteed clearance for domestic gardens, estates, and silage fields.</p>
+                </div>
             </div>
             <div class="card">
-                <h3>Pest Control Wales</h3>
-                <p>From wasp nests to rodent control, we provide discreet and effective solutions for homes and businesses. Covering Brecon, Neath, Merthyr, and Ammanford.</p>
+                <img src="images/rat1.jpg" alt="Farm Pest Control Wales" class="card-img">
+                <div class="card-content">
+                    <h3>Agricultural Pest Control</h3>
+                    <p>Red Tractor friendly rodent control and wasp nest removal. We provide discreet, effective solutions for farms and rural businesses across the Valleys and Mid Wales.</p>
+                </div>
             </div>
         </div>
     </div>
 
+    <div class="container" id="gallery">
+        <h2>Field Work Gallery</h2>
+        <div class="gallery-grid">
+            <img src="images/farm_moles.jpg" alt="Farm mole clearance" class="gallery-img">
+            <img src="images/farm_son.jpg" alt="Traditional pest control service" class="gallery-img">
+            <img src="images/farm_john_mole.jpg" alt="Professional mole catcher" class="gallery-img">
+            <img src="images/moleintrap.jpg" alt="Effective mole trapping" class="gallery-img">
+        </div>
+    </div>
+
     <section class="contact-section">
-        <h2>Get Expert Help Now</h2>
-        <p>Available for emergency call-outs and agricultural contracts</p>
+        <h2>Expert Help Across Wales</h2>
+        <p>Serving Brecon, Neath, Merthyr, Ammanford & surrounding areas.</p>
         <a href="tel:07375303124" class="phone-display">07375 303124</a>
-        <p>Email: info@welshtownandcountry.co.uk</p>
+        
+        <img src="images/area.png" alt="Welsh Town and Country Service Area Map" class="area-map">
     </section>
 
     <footer>
-        <p>&copy; 2025 Welsh Town & Country Pest Services</p>
-        <p>Expert Traditional Vermin Control in Wales</p>
+        <span class="footer-brand">Welsh Town & Country Pest Services</span>
+        <p>&copy; 2025 | Mastering Traditional Vermin Control Since 2017</p>
+        <p style="margin-top: 15px; font-size: 0.85rem;">Registered Waste Carrier • Fully Insured • BPCA Trained</p>
     </footer>
 
 </body>

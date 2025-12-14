@@ -2,7 +2,6 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 
 export default function Home() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -29,7 +28,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="page-wrapper">
       <Head>
         <title>Welsh Town & Country | Mole & Pest Control Across South & Mid Wales</title>
         <meta name="description" content="Fast, reliable mole and pest control for farms, homes, and gardens across South & Mid Wales. Call 07375 303124 for expert local help." />
@@ -37,6 +36,7 @@ export default function Home() {
         <meta property="og:description" content="Local mole and pest control from Brecon to Llandeilo, Banwen, Neath, Merthyr, and surrounding areas. Ring 07375 303124 for fast help." />
         <meta property="og:url" content="https://www.welshmolecatcher.co.uk/" />
         <meta name="keywords" content="mole catcher wales, mole control, pest control south wales, pest control brecon, pest control neath, mole catcher merthyr" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <nav className="nav-container">
@@ -45,7 +45,7 @@ export default function Home() {
           <ul className="nav-menu">
             <li><Link href="#services"><a className="nav-link">Services</a></Link></li>
             <li><Link href="#contact"><a className="nav-link">Contact</a></Link></li>
-            <li><a href="tel:07375303124" className="hero-button">07375 303124</a></li>
+            <li><a href="tel:07375303124" className="nav-cta-button">07375 303124</a></li>
           </ul>
         </div>
       </nav>
@@ -64,12 +64,14 @@ export default function Home() {
           <h2 className="section-title">Professional Services</h2>
           <div className="services-grid">
             <div className="service-card">
+              <div className="icon">🛡️</div>
               <h3 className="service-title">Traditional Mole Catching</h3>
-              <p>Specialist trapping for lawns, farms, and silage fields. 100% poison-free.</p>
+              <p>Specialist trapping for lawns, farms, and silage fields. 100% poison-free and safe for livestock.</p>
             </div>
             <div className="service-card">
+              <div className="icon">🐀</div>
               <h3 className="service-title">Pest Control</h3>
-              <p>Rats, mice, wasps, and squirrels handled discreetly and effectively.</p>
+              <p>Rats, mice, wasps, and squirrels handled discreetly and effectively across South Wales.</p>
             </div>
           </div>
         </div>
@@ -77,22 +79,241 @@ export default function Home() {
 
       <section id="contact" className="contact-section">
         <div className="contact-form-container">
-          <h2 className="section-title">Get in Touch</h2>
+          <h2 className="section-title text-white">Get in Touch</h2>
+          <p className="contact-sub">Available for emergency call-outs 24/7</p>
           <form onSubmit={handleSubmit} className="contact-form">
             <input type="text" name="name" placeholder="Name" value={formData.name} onChange={handleChange} className="form-input" required />
             <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} className="form-input" required />
-            <textarea name="message" placeholder="Message" value={formData.message} onChange={handleChange} className="form-textarea" required></textarea>
+            <textarea name="message" placeholder="How can we help?" value={formData.message} onChange={handleChange} className="form-textarea" required></textarea>
             <button type="submit" className="form-button">
               {submitStatus === 'loading' ? 'Sending...' : 'Send Message'}
             </button>
-            {submitStatus === 'success' && <p className="text-green-600 mt-2">Message sent successfully!</p>}
+            {submitStatus === 'success' && <p className="success-msg">Message sent successfully!</p>}
+            {submitStatus === 'error' && <p className="error-msg">Error sending message. Please call us.</p>}
           </form>
         </div>
       </section>
 
       <footer className="footer">
-        <p>© 2025 Welsh Town & Country | 07375 303124</p>
+        <p>© 2025 Welsh Town & Country Pest Services</p>
+        <p>Expert Vermin Control: 07375 303124</p>
       </footer>
+
+      <style jsx global>{`
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+        html, body {
+          margin: 0;
+          padding: 0;
+          font-family: 'Poppins', sans-serif;
+          background-color: #f8f9fa;
+          color: #333;
+          scroll-behavior: smooth;
+        }
+
+        .page-wrapper {
+          min-height: 100vh;
+        }
+
+        .nav-container {
+          position: sticky;
+          top: 0;
+          z-index: 1000;
+          background-color: #1a1c14;
+          padding: 1rem;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .nav-content {
+          max-width: 1200px;
+          margin: 0 auto;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .nav-logo {
+          color: #a8c686;
+          font-weight: 700;
+          font-size: 1.4rem;
+          text-decoration: none;
+        }
+
+        .nav-menu {
+          display: flex;
+          gap: 1.5rem;
+          list-style: none;
+          align-items: center;
+          margin: 0;
+          padding: 0;
+        }
+
+        .nav-link {
+          color: #fff;
+          text-decoration: none;
+          font-weight: 600;
+          transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+          color: #a8c686;
+        }
+
+        .nav-cta-button {
+          background-color: #a8c686;
+          color: #1a1c14;
+          padding: 0.5rem 1.2rem;
+          border-radius: 50px;
+          text-decoration: none;
+          font-weight: 700;
+        }
+
+        .hero-section {
+          position: relative;
+          height: 75vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: url('/images/moles_collage.jpg') center/cover no-repeat;
+          color: white;
+        }
+
+        .hero-overlay {
+          position: absolute;
+          inset: 0;
+          background: rgba(0,0,0,0.65);
+        }
+
+        .hero-content {
+          position: relative;
+          z-index: 10;
+          text-align: center;
+          padding: 0 1rem;
+        }
+
+        .hero-title {
+          font-size: clamp(2.5rem, 8vw, 4.5rem);
+          margin-bottom: 0.5rem;
+          line-height: 1.1;
+        }
+
+        .hero-subtitle {
+          font-size: clamp(1.1rem, 3vw, 1.8rem);
+          margin-bottom: 2rem;
+          color: #a8c686;
+        }
+
+        .hero-button {
+          background-color: #a8c686;
+          color: #1a1c14;
+          padding: 1rem 2.5rem;
+          border-radius: 8px;
+          text-decoration: none;
+          font-weight: 700;
+          font-size: 1.1rem;
+          display: inline-block;
+          transition: transform 0.2s;
+        }
+
+        .hero-button:hover {
+          transform: scale(1.05);
+        }
+
+        .services-section {
+          padding: 5rem 0;
+        }
+
+        .section-container {
+          max-width: 1100px;
+          margin: 0 auto;
+          padding: 0 1.5rem;
+        }
+
+        .section-title {
+          text-align: center;
+          font-size: 2.5rem;
+          margin-bottom: 3rem;
+          color: #1a1c14;
+        }
+
+        .services-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 2.5rem;
+        }
+
+        .service-card {
+          background: white;
+          padding: 3rem 2rem;
+          border-radius: 15px;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+          text-align: center;
+          border-bottom: 5px solid #a8c686;
+        }
+
+        .icon { font-size: 3rem; margin-bottom: 1rem; }
+
+        .service-title { font-size: 1.6rem; margin-bottom: 1rem; }
+
+        .contact-section {
+          background: #1a1c14;
+          padding: 5rem 0;
+        }
+
+        .contact-form-container {
+          max-width: 550px;
+          margin: 0 auto;
+          padding: 0 1.5rem;
+          text-align: center;
+        }
+
+        .text-white { color: #fff; }
+        .contact-sub { color: #a8c686; margin-bottom: 2rem; }
+
+        .contact-form {
+          display: flex;
+          flex-direction: column;
+          gap: 1.2rem;
+        }
+
+        .form-input, .form-textarea {
+          padding: 1rem;
+          border: 1px solid #333;
+          border-radius: 8px;
+          font-size: 1rem;
+          background: #222;
+          color: white;
+        }
+
+        .form-textarea { height: 150px; resize: none; }
+
+        .form-button {
+          background: #a8c686;
+          color: #1a1c14;
+          padding: 1.2rem;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          font-weight: 700;
+          font-size: 1.1rem;
+        }
+
+        .success-msg { color: #a8c686; font-weight: bold; margin-top: 1rem; }
+        .error-msg { color: #ff6b6b; font-weight: bold; margin-top: 1rem; }
+
+        .footer {
+          background: #000;
+          color: rgba(255,255,255,0.6);
+          text-align: center;
+          padding: 3rem;
+          font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+          .nav-menu { display: none; }
+          .hero-section { height: 60vh; }
+        }
+      `}</style>
     </div>
   );
 }

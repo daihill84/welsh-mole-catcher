@@ -1,12 +1,200 @@
-<title>Welsh Town & Country | Mole & Pest Control Across South & Mid Wales</title>
+import Head from 'next/head';
+import Link from 'next/link';
+import Image from 'next/image';
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import 'tailwindcss/tailwind.css';
 
-<meta name="description" content="Fast, reliable mole and pest control for farms, homes, and gardens across South & Mid Wales. Call 07375 303124 for expert local help." />
+export default function Home() {
+  const [motionLib, setMotionLib] = useState(null);
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [submitStatus, setSubmitStatus] = useState(null);
 
-<meta property="og:title" content="Welsh Town & Country - Professional Mole & Pest Control" />
-<meta property="og:description" content="Local mole and pest control from Brecon to Llandeilo, Banwen, Neath, Merthyr, and surrounding areas. Ring 07375 303124 for fast help." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.welshtownandcountry.co.uk/" />
-<meta property="og:image" content="https://www.welshtownandcountry.co.uk/logo.jpg" />
+  useEffect(() => {
+    const loadMotion = async () => {
+      try { const mod = await import('framer-motion'); setMotionLib(mod); } 
+      catch { console.warn('Framer Motion failed to load.'); }
+    };
+    loadMotion();
+  }, []);
 
-<meta name="robots" content="index, follow" />
-<meta name="keywords" content="mole catcher wales, mole control, pest control south wales, pest control brecon, pest control neath, pest control merthyr, mole catcher brecon, mole catcher neath" />
+  const MotionDiv = motionLib ? motionLib.motion.div : 'div';
+
+  const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
+  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch('/api/submit-lead', { 
+        method: 'POST', 
+        headers: { 'Content-Type': 'application/json' }, 
+        body: JSON.stringify({ ...formData, site: 'Welsh Mole Catcher' }) 
+      });
+      setSubmitStatus(res.ok ? 'success' : 'error');
+      if(res.ok) setFormData({ name: '', email: '', message: '' });
+    } catch { setSubmitStatus('error'); }
+  };
+
+  return (
+    <div>
+      <Head>
+        <title>Welsh Town & Country | Mole & Pest Control Across South & Mid Wales</title>
+        <meta name="description" content="Fast, reliable mole and pest control for farms, homes, and gardens across South & Mid Wales. Call 07375 303124 for expert local help." />
+        
+        {/* Open Graph Tags */}
+        <meta property="og:title" content="Welsh Town & Country - Professional Mole & Pest Control" />
+        <meta property="og:description" content="Local mole and pest control from Brecon to Llandeilo, Banwen, Neath, Merthyr, and surrounding areas. Ring 07375 303124 for fast help." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.welshmolecatcher.co.uk/" />
+        <meta property="og:image" content="https://www.welshtownandcountry.co.uk/logo.jpg" />
+
+        <meta name="robots" content="index, follow" />
+        <meta name="keywords" content="mole catcher wales, mole control, pest control south wales, pest control brecon, pest control neath, pest control merthyr, mole catcher brecon, mole catcher neath" />
+        <link rel="icon" href="/favicon.ico" />
+
+        {/* Local Business Schema Markup */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "PestControlService",
+            "name": "Welsh Mole Catcher (Welsh Town & Country)",
+            "telephone": "07375303124",
+            "url": "https://www.welshmolecatcher.co.uk/",
+            "logo": "https://www.welshtownandcountry.co.uk/logo.jpg",
+            "areaServed": ["Brecon", "Merthyr Tydfil", "Neath", "Ammanford", "Llandeilo", "Banwen"],
+            "description": "Traditional, poison-free mole and pest control across South and Mid Wales."
+          })}
+        </script>
+      </Head>
+
+      {/* Navbar */}
+      <nav className="bg-[#1a1c14] text-[#f5e8c7] p-4 sticky top-0 z-50 shadow-xl">
+        <div className="container mx-auto flex justify-between items-center">
+          <Link href="/"><a className="text-xl md:text-2xl font-heading font-bold tracking-tight">Welsh Mole Catcher</a></Link>
+          <div className="hidden lg:flex space-x-8 font-semibold text-sm uppercase tracking-widest">
+            {['Home','Services','Gallery','Contact'].map(section => (
+              <Link key={section} href={`#${section.toLowerCase()}`}>
+                <a className="hover:text-[#a8c686] transition-colors">{section}</a>
+              </Link>
+            ))}
+          </div>
+          <a href="tel:07375303124" className="bg-[#a8c686] text-[#1a1c14] px-6 py-2 rounded-full font-bold shadow-md hover:bg-[#8ba567] transition-all">
+            07375 303124
+          </a>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <MotionDiv 
+        className="relative h-[80vh] bg-cover bg-center text-[#f5e8c7]" 
+        style={{ backgroundImage: "url('/moles_collage.jpg')" }} 
+        initial={{ opacity: 0 }} 
+        animate={{ opacity: 1 }} 
+        transition={{ duration: 1.2 }}
+      >
+        <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center px-4">
+          <Image src="/logo.png" alt="Welsh Town and Country Logo" width={130} height={130} className="rounded-full border-2 border-[#a8c686] mb-6" />
+          <h1 className="text-5xl md:text-8xl font-heading font-bold leading-none mb-4">Welsh Mole Catcher</h1>
+          <p className="text-xl md:text-3xl font-light italic text-[#a8c686]">
+            Expert Traditional Mole & Pest Control
+          </p>
+          <div className="mt-10 flex flex-col sm:flex-row gap-5">
+            <Link href="#contact"><a className="bg-[#a8c686] text-[#1a1c14] px-10 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-xl">Get A Quote</a></Link>
+            <a href="tel:07375303124" className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition-all">
+              Call 07375 303124
+            </a>
+          </div>
+        </div>
+      </MotionDiv>
+
+      {/* Services Section */}
+      <section id="services" className="py-24 bg-[#f9f5e8]">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl font-heading text-[#3e2d20] mb-12">Professional Vermin Control</h2>
+          <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            <div className="bg-white p-10 rounded-2xl shadow-sm border-b-8 border-[#a8c686]">
+              <h3 className="text-2xl font-heading mb-4 text-[#3e2d20]">Mole Catching</h3>
+              <p className="text-[#4a3b30]">100% Poison-free, traditional trapping methods. Safe for lawns, pets, and livestock. Guaranteed results for gardens and silage fields.</p>
+            </div>
+            <div className="bg-white p-10 rounded-2xl shadow-sm border-b-8 border-[#a8c686]">
+              <h3 className="text-2xl font-heading mb-4 text-[#3e2d20]">General Pest Control</h3>
+              <p className="text-[#4a3b30]">Expert removal of Rats, Mice, Wasps, Bees, and Squirrels. Discreet service across South and Mid Wales.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery */}
+      <section id="gallery" className="py-24 bg-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl font-heading text-[#3e2d20] mb-12 text-center">Gallery</h2>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {['/moles_collage.jpg','/farm_moles.jpg','/farm_son.jpg','/farm_john_mole.jpg'].map((src,i) => (
+              <div key={i} className="group overflow-hidden rounded-xl aspect-square relative shadow-lg">
+                <Image src={src} alt="Mole Catcher Work" layout="fill" objectFit="cover" className="group-hover:scale-110 transition-transform duration-700" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form Section */}
+      <section id="contact" className="py-24 bg-[#f0ead6]">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="bg-[#1a1c14] text-[#f5e8c7] rounded-[2rem] overflow-hidden shadow-2xl flex flex-col md:flex-row border border-[#a8c686]/20">
+            <div className="md:w-1/2 p-10 md:p-16 bg-[#2f2a1d]">
+              <h2 className="text-4xl font-heading mb-6">Local Help</h2>
+              <p className="text-lg mb-8 opacity-80">Covering Brecon to Llandeilo, Banwen, Neath, Merthyr, and all surrounding areas.</p>
+              
+              <div className="space-y-6">
+                <a href="tel:07375303124" className="flex items-center space-x-4">
+                  <span className="bg-[#a8c686] p-4 rounded-full text-black">📞</span>
+                  <span className="text-2xl font-bold">07375 303124</span>
+                </a>
+                <div className="flex items-center space-x-4">
+                  <span className="bg-[#a8c686]/20 p-4 rounded-full">🕒</span>
+                  <span className="text-lg italic">24/7 Response Available</span>
+                </div>
+              </div>
+            </div>
+
+            <form onSubmit={handleSubmit} className="md:w-1/2 p-10 md:p-16 space-y-5">
+              {['name','email','message'].map(field => (
+                <div key={field}>
+                  <label className="block text-[#a8c686] mb-2 font-semibold uppercase text-xs tracking-widest">{field}</label>
+                  {field==='message' ? 
+                    <textarea name={field} value={formData[field]} onChange={handleChange} rows="4" className="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-[#a8c686] outline-none transition-all text-white" placeholder="Message..." required /> :
+                    <input type={field==='email'?'email':'text'} name={field} value={formData[field]} onChange={handleChange} className="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-[#a8c686] outline-none transition-all text-white" placeholder={`Your ${field}`} required />
+                  }
+                </div>
+              ))}
+              <button type="submit" className="w-full bg-[#a8c686] text-[#1a1c14] py-5 rounded-xl font-bold text-xl hover:bg-[#8ba567] transition-all shadow-lg">
+                Send Message
+              </button>
+              {submitStatus==='success' && <p className="text-[#a8c686] font-bold mt-4 text-center">Sent! I'll get back to you fast.</p>}
+            </form>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-[#1a1c14] text-[#a8c686] py-12 text-center border-t border-[#a8c686]/10">
+        <div className="container mx-auto px-4">
+          <p className="text-white opacity-80 mb-6 font-heading text-lg">Welsh Town & Country Pest Services</p>
+          <div className="flex justify-center space-x-8 mb-8 text-sm uppercase tracking-widest font-bold">
+            <a href="https://www.welshtownandcountrypestservices.co.uk" className="hover:text-white transition-colors">Main Site</a>
+            <Link href="#services"><a className="hover:text-white">Services</a></Link>
+            <Link href="#contact"><a className="hover:text-white">Contact</a></Link>
+          </div>
+          <p className="text-xs opacity-40">© 2025 Welsh Mole Catcher. Expert Vermin Control across South & Mid Wales.</p>
+        </div>
+      </footer>
+
+      <style jsx global>{`
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+        body { font-family:'Montserrat', sans-serif; background:#fefbf6; color:#1a1c14; line-height:1.6; scroll-behavior:smooth; }
+        .font-heading { font-family:'Playfair Display', serif; }
+      `}</style>
+    </div>
+  );
+}

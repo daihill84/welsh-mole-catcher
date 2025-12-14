@@ -1,154 +1,123 @@
-import Head from 'next/head';
-import Link from 'next/link';
-import { useState } from 'react';
-
-export default function Home() {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [status, setStatus] = useState(null);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus('sending');
-    try {
-      const res = await fetch('/api/submit-lead', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...formData, site: 'Welsh Mole Catcher All-In-One' }),
-      });
-      if (res.ok) {
-        setStatus('success');
-        setFormData({ name: '', email: '', message: '' });
-      } else { setStatus('error'); }
-    } catch { setStatus('error'); }
-  };
-
-  return (
-    <div className="site-wrapper">
-      <Head>
-        <title>Welsh Town & Country | Mole & Pest Control Across South & Mid Wales</title>
-        <meta name="description" content="Fast, reliable mole and pest control for farms, homes, and gardens across South & Mid Wales. Call 07375 303124 for expert local help." />
-        <meta property="og:title" content="Welsh Town & Country - Professional Mole & Pest Control" />
-        <meta property="og:description" content="Local mole and pest control from Brecon to Llandeilo, Banwen, Neath, Merthyr, and surrounding areas. Ring 07375 303124 for fast help." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.welshmolecatcher.co.uk/" />
-        <meta name="robots" content="index, follow" />
-        <meta name="keywords" content="mole catcher wales, mole control, pest control south wales, pest control brecon, pest control neath, mole catcher merthyr" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      {/* STYLES START HERE */}
-      <style jsx global>{`
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welsh Town & Country | Mole & Pest Control Across South & Mid Wales</title>
+    
+    <meta name="description" content="Fast, reliable mole and pest control for farms, homes, and gardens across South & Mid Wales. Call 07375 303124 for expert local help.">
+    <meta name="keywords" content="mole catcher wales, mole control, pest control south wales, pest control brecon, pest control neath, mole catcher merthyr">
+    
+    <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html, body { 
-          font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
-          background-color: #fcfbf7; 
-          color: #2d2a26;
-          scroll-behavior: smooth;
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            line-height: 1.6; 
+            background-color: #fcfbf7; 
+            color: #2d2a26;
         }
-        .site-wrapper { min-height: 100vh; display: flex; flex-direction: column; }
         
-        /* Nav */
-        nav { background: #23211d; color: #f5e8c7; padding: 1rem; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
-        .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.4rem; font-weight: 800; color: #a8c686; text-decoration: none; }
-        .nav-links a { color: #fff; text-decoration: none; margin-left: 1.5rem; font-weight: 600; font-size: 0.9rem; }
-        
-        /* Hero */
+        /* Navigation */
+        nav { 
+            background: #23211d; 
+            padding: 1.2rem; 
+            position: sticky; 
+            top: 0; 
+            z-index: 100;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .logo { color: #a8c686; font-size: 1.5rem; font-weight: bold; text-decoration: none; }
+        .nav-links a { color: #fff; text-decoration: none; margin-left: 20px; font-weight: 600; }
+
+        /* Hero Section */
         .hero { 
-          background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/moles_collage.jpg'); 
-          background-size: cover; background-position: center;
-          height: 70vh; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; padding: 0 1rem;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('moles_collage.jpg'); 
+            background-size: cover; 
+            background-position: center;
+            height: 60vh; 
+            display: flex; 
+            flex-direction: column;
+            justify-content: center; 
+            align-items: center; 
+            text-align: center; 
+            color: #fff;
+            padding: 20px;
         }
-        .hero-box h1 { font-size: clamp(2rem, 8vw, 4rem); margin-bottom: 1rem; }
-        .hero-box p { font-size: 1.2rem; color: #a8c686; margin-bottom: 2rem; font-weight: 600; }
-        .cta-btn { background: #a8c686; color: #23211d; padding: 0.8rem 2rem; border-radius: 5px; text-decoration: none; font-weight: 800; display: inline-block; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.5rem; color: #a8c686; margin-bottom: 25px; }
+        .cta-btn { 
+            background: #a8c686; 
+            color: #23211d; 
+            padding: 15px 30px; 
+            border-radius: 5px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            font-size: 1.2rem;
+        }
 
-        /* Sections */
-        section { padding: 4rem 1rem; max-width: 1100px; margin: 0 auto; width: 100%; }
-        h2 { font-size: 2.2rem; margin-bottom: 2rem; text-align: center; border-bottom: 3px solid #a8c686; display: inline-block; left: 50%; position: relative; transform: translateX(-50%); padding-bottom: 0.5rem; }
+        /* Content Sections */
+        .container { max-width: 1000px; margin: 50px auto; padding: 0 20px; text-align: center; }
+        h2 { font-size: 2.5rem; margin-bottom: 30px; border-bottom: 4px solid #a8c686; display: inline-block; padding-bottom: 10px; }
         
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
-        .card { background: #fff; padding: 2rem; border-radius: 10px; border: 1px solid #e0dbcc; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .card h3 { color: #23211d; margin-bottom: 1rem; }
-        
-        /* Contact Form */
-        .contact-area { background: #23211d; color: #fff; padding: 4rem 1rem; }
-        .form-container { max-width: 600px; margin: 0 auto; }
-        .form-container h2 { color: #fff; border-bottom-color: #a8c686; }
-        .input-group { margin-bottom: 1rem; }
-        input, textarea { width: 100%; padding: 0.8rem; border-radius: 5px; border: none; font-family: inherit; }
-        textarea { height: 120px; }
-        .submit-btn { width: 100%; background: #a8c686; color: #23211d; border: none; padding: 1rem; border-radius: 5px; font-weight: 800; cursor: pointer; }
-        .phone-link { display: block; text-align: center; font-size: 2rem; color: #a8c686; font-weight: 800; text-decoration: none; margin-bottom: 2rem; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .card { background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: left; }
+        .card h3 { margin-bottom: 15px; color: #23211d; }
 
-        footer { background: #1a1916; color: #888; text-align: center; padding: 2rem; font-size: 0.8rem; margin-top: auto; }
+        /* Contact Section */
+        .contact-section { background: #23211d; color: #fff; padding: 60px 20px; text-align: center; }
+        .phone-display { font-size: 2.5rem; color: #a8c686; display: block; margin: 20px 0; text-decoration: none; font-weight: bold; }
         
+        footer { background: #1a1916; color: #777; padding: 30px; text-align: center; font-size: 0.9rem; }
+
         @media (max-width: 600px) {
-          .nav-links { display: none; }
-          .hero { height: 50vh; }
+            .hero h1 { font-size: 2.2rem; }
+            .nav-links { display: none; }
         }
-      `}</style>
-      {/* STYLES END HERE */}
+    </style>
+</head>
+<body>
 
-      <nav>
-        <div className="nav-inner">
-          <Link href="/"><a className="logo">Welsh Mole Catcher</a></Link>
-          <div className="nav-links">
+    <nav>
+        <a href="#" class="logo">Welsh Mole Catcher</a>
+        <div class="nav-links">
             <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
             <a href="tel:07375303124">07375 303124</a>
-          </div>
         </div>
-      </nav>
+    </nav>
 
-      <header className="hero">
-        <div className="hero-box">
-          <h1>Welsh Mole Catcher</h1>
-          <p>Traditional • Poison-Free • Local Expert</p>
-          <a href="tel:07375303124" className="cta-btn">Call Now: 07375 303124</a>
-        </div>
-      </header>
+    <header class="hero">
+        <h1>Welsh Mole Catcher</h1>
+        <p>Traditional • Poison-Free • Local Expert</p>
+        <a href="tel:07375303124" class="cta-btn">Call: 07375 303124</a>
+    </header>
 
-      <section id="services">
+    <div class="container" id="services">
         <h2>Professional Services</h2>
-        <div className="grid">
-          <div className="card">
-            <h3>Traditional Mole Catching</h3>
-            <p>We use professional trapping methods that are 100% poison-free. Safe for your pets, livestock, and children. Guaranteed results for gardens and farms.</p>
-          </div>
-          <div className="card">
-            <h3>Pest Control Wales</h3>
-            <p>From wasp nests to rodent control, we provide discreet and effective solutions for homes and businesses across the South and Mid Wales valleys.</p>
-          </div>
+        <div class="services-grid">
+            <div class="card">
+                <h3>Traditional Mole Catching</h3>
+                <p>We use professional trapping methods that are 100% poison-free. Safe for your pets, livestock, and children. Guaranteed results for gardens and farms across South and Mid Wales.</p>
+            </div>
+            <div class="card">
+                <h3>Pest Control Wales</h3>
+                <p>From wasp nests to rodent control, we provide discreet and effective solutions for homes and businesses. Covering Brecon, Neath, Merthyr, and Ammanford.</p>
+            </div>
         </div>
-      </section>
-
-      <div className="contact-area" id="contact">
-        <div className="form-container">
-          <h2>Get Expert Help</h2>
-          <a href="tel:07375303124" className="phone-link">07375 303124</a>
-          <form onSubmit={handleSubmit}>
-            <div className="input-group">
-              <input type="text" placeholder="Your Name" value={formData.name} onChange={(e)=>setFormData({...formData, name: e.target.value})} required />
-            </div>
-            <div className="input-group">
-              <input type="email" placeholder="Your Email" value={formData.email} onChange={(e)=>setFormData({...formData, email: e.target.value})} required />
-            </div>
-            <div className="input-group">
-              <textarea placeholder="How can we help?" value={formData.message} onChange={(e)=>setFormData({...formData, message: e.target.value})} required></textarea>
-            </div>
-            <button type="submit" className="submit-btn">
-              {status === 'sending' ? 'Sending...' : 'Send Message'}
-            </button>
-            {status === 'success' && <p style={{color: '#a8c686', marginTop: '1rem', textAlign: 'center'}}>Message sent! We will contact you shortly.</p>}
-          </form>
-        </div>
-      </div>
-
-      <footer>
-        <p>© 2025 Welsh Town & Country Pest Services | Registered in Wales</p>
-        <p>Covering Brecon, Neath, Merthyr, Ammanford & Beyond</p>
-      </footer>
     </div>
-  );
-}
+
+    <section class="contact-section">
+        <h2>Get Expert Help Now</h2>
+        <p>Available for emergency call-outs and agricultural contracts</p>
+        <a href="tel:07375303124" class="phone-display">07375 303124</a>
+        <p>Email: info@welshtownandcountry.co.uk</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Welsh Town & Country Pest Services</p>
+        <p>Expert Traditional Vermin Control in Wales</p>
+    </footer>
+
+</body>
+</html>

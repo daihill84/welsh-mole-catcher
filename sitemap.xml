@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://www.welshmolecatcher.co.uk/</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.welshmolecatcher.co.uk/farm-pest-control.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.welshmolecatcher.co.uk/gallery.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url><loc>https://merthyr.welshtownandcountry.co.uk/index.html</loc><priority>0.9</priority></url>
+  <url><loc>https://merthyr.welshtownandcountry.co.uk/drainage-rat-control.html</loc><priority>0.95</priority></url>
+  <url><loc>https://merthyr.welshtownandcountry.co.uk/rat-catcher.html</loc><priority>0.9</priority></url>
+  <url><loc>https://merthyr.welshtownandcountry.co.uk/rat-catcher-tredegar.html</loc><priority>0.9</priority></url>
+  <url><loc>https://merthyr.welshtownandcountry.co.uk/bed-bug-removal.html</loc><priority>0.9</priority></url>
+  <url><loc>https://merthyr.welshtownandcountry.co.uk/merthyr-rodent-control.html</loc><priority>0.8</priority></url>
+  <url><loc>https://merthyr.welshtownandcountry.co.uk/wasp-nest-removal.html</loc><priority>0.8</priority></url>
+  <url><loc>https://merthyr.welshtownandcountry.co.uk/mouse-catcher-merthyr.html</loc><priority>0.8</priority></url>
+  <url><loc>https://merthyr.welshtownandcountry.co.uk/farm-pest-control.html</loc><priority>0.85</priority></url>
+  <url><loc>https://merthyr.welshtownandcountry.co.uk/commercial-pest-control.html</loc><priority>0.85</priority></url>
+  <url><loc>https://merthyr.welshtownandcountry.co.uk/insect-control.html</loc><priority>0.75</priority></url>
+  <url><loc>https://merthyr.welshtownandcountry.co.uk/bee-removal.html</loc><priority>0.75</priority></url>
+  <url><loc>https://merthyr.welshtownandcountry.co.uk/squirrel-control.html</loc><priority>0.75</priority></url>
+  <url><loc>https://merthyr.welshtownandcountry.co.uk/woodworm.html</loc><priority>0.8</priority></url>
+  <url><loc>https://merthyr.welshtownandcountry.co.uk/a465-areas.html</loc><priority>0.8</priority></url>
+
+  <url><loc>https://brecon.welshtownandcountry.co.uk/index.html</loc><priority>0.9</priority></url>
+  <url><loc>https://brecon.welshtownandcountry.co.uk/mole-trapping.html</loc><priority>0.95</priority></url>
+  <url><loc>https://brecon.welshtownandcountry.co.uk/farm-assurance.html</loc><priority>0.9</priority></url>
+  <url><loc>https://brecon.welshtownandcountry.co.uk/bed-bugs.html</loc><priority>0.8</priority></url>
+  <url><loc>https://brecon.welshtownandcountry.co.uk/rat-catcher-llandeilo.html</loc><priority>0.7</priority></url>
+
+  <url><loc>https://neath.welshtownandcountry.co.uk/index.html</loc><priority>0.9</priority></url>
+  <url><loc>https://neath.welshtownandcountry.co.uk/rodents.html</loc><priority>0.8</priority></url>
+  <url><loc>https://neath.welshtownandcountry.co.uk/wasps.html</loc><priority>0.8</priority></url>
+  <url><loc>https://neath.welshtownandcountry.co.uk/moles.html</loc><priority>0.9</priority></url>
+  <url><loc>https://neath.welshtownandcountry.co.uk/rat-catcher-skewen.html</loc><priority>0.7</priority></url>
+  <url><loc>https://neath.welshtownandcountry.co.uk/glynneath-pest-control.html</loc><priority>0.7</priority></url>
+
+</urlset>

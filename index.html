@@ -3,181 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Welsh Town & Country Pest Services | David: Ex-Pestokil Specialist</title>
-    <meta name="description" content="24/7 Professional Pest Control in Merthyr, Neath & Brecon. David: Ex-Pestokil Specialist. CCTV Drain Surveys, Red Tractor Farm Assurance & Bed Bug Heat Treatment.">
-    <meta name="keywords" content="Pest Control Merthyr Tydfil, Pest Control Neath, Pest Control Brecon, David Pest Control, Rat Catcher Merthyr, Mole Catcher Wales, Red Tractor Pest Control, Awaab's Law Compliance, CCTV Drain Survey Rats, Bed Bug Removal Merthyr">
     
-    <meta name="geo.region" content="GB-WLS" />
-    <meta name="geo.placename" content="Merthyr Tydfil, Neath, Brecon" />
-    <meta name="geo.position" content="51.7431;-3.3772" />
-    <meta name="ICBM" content="51.7431, -3.3772" />
-
-    <link rel="canonical" href="https://www.welshmolecatcher.co.uk/" />
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "PestControlService",
-      "name": "Welsh Town & Country Pest Services",
-      "alternateName": "Welsh Mole Catcher",
-      "description": "David: Ex-Pestokil Senior Technician providing specialist agricultural and domestic pest control. Specialist in CCTV Drain Surveys and Traditional Mole Catching.",
-      "url": "https://www.welshmolecatcher.co.uk/",
-      "telephone": "07375 303124",
-      "priceRange": "££",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Resolven",
-        "addressRegion": "Neath Port Talbot",
-        "postalCode": "SA11",
-        "addressCountry": "GB"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 51.7135,
-        "longitude": -3.7022
-      },
-      "areaServed": [
-        {"@type": "City", "name": "Merthyr Tydfil"},
-        {"@type": "City", "name": "Neath"},
-        {"@type": "City", "name": "Brecon"},
-        {"@type": "City", "name": "Sennybridge"},
-        {"@type": "City", "name": "Ebbw Vale"},
-        {"@type": "City", "name": "Tredegar"}
-      ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Pest Control Services",
-        "itemListElement": [
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "CCTV Drain Surveys for Rats"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Traditional Mole Catching"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Red Tractor Farm Assurance"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Bed Bug Heat Treatment"}}
-        ]
-      }
-    }
-    </script>
-
+    <meta name="description" content="24/7 Professional Pest Control in Merthyr, Neath & Brecon. David: Ex-Pestokil Specialist. CCTV Drain Surveys, Red Tractor Farm Assurance & Traditional Mole Trapping.">
+    <meta name="keywords" content="Pest Control Merthyr, Pest Control Neath, Pest Control Brecon, David Pest Control, Rat Catcher Merthyr, Mole Catcher Wales, Red Tractor Pest Control, Awaab's Law Compliance">
+    
     <style>
         :root { --green: #2e4d2e; --light-green: #a8c686; --dark: #1a1916; --gold: #ffcc00; --red: #d32f2f; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, sans-serif; line-height: 1.6; background-color: #fcfbf7; color: #2d2a26; }
 
-        /* Trust Bar */
-        .trust-strip { background: var(--dark); color: #fff; padding: 10px; text-align: center; font-size: 0.85rem; border-bottom: 2px solid var(--gold); }
-        .trust-strip span { color: var(--gold); margin: 0 15px; font-weight: bold; }
+        /* Navigation - Links to Hubs */
+        nav { background: var(--dark); padding: 1rem; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-around; align-items: center; border-bottom: 3px solid var(--gold); }
+        .logo-text { color: #fff; font-size: 1.2rem; font-weight: bold; text-decoration: none; }
+        .nav-links a { color: #fff; text-decoration: none; margin-left: 15px; font-size: 0.9rem; font-weight: 600; }
+        .nav-links a:hover { color: var(--gold); }
 
-        /* Hero */
-        header { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/farm_background.jpg'); background-size: cover; background-position: center; height: 65vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #fff; padding: 20px; }
-        header h1 { font-size: clamp(2rem, 5vw, 3.5rem); color: var(--gold); margin-bottom: 10px; }
-        header p { font-size: 1.3rem; max-width: 800px; margin-bottom: 25px; }
+        /* Hero Section */
+        header { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/farm_background.jpg'); background-size: cover; background-position: center; height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #fff; padding: 20px; }
+        header h1 { font-size: clamp(1.8rem, 5vw, 3rem); color: var(--gold); margin-bottom: 10px; }
+        
+        /* The Hub Bridge - Direct Links for SEO */
+        .hub-bridge { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; max-width: 1200px; margin: -50px auto 40px; padding: 0 20px; }
+        .hub-card { background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-top: 5px solid var(--green); text-decoration: none; color: inherit; transition: 0.3s; }
+        .hub-card:hover { transform: translateY(-10px); }
+        .hub-card h3 { color: var(--green); margin-bottom: 10px; }
+        .hub-card span { color: var(--red); font-weight: bold; font-size: 0.9rem; }
 
-        /* Conversion Bridge */
-        .bridge { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; max-width: 1200px; margin: -60px auto 40px; padding: 0 20px; }
-        .card { background: #fff; padding: 35px; border-radius: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); border-top: 6px solid var(--green); }
-        .card.urgent { border-top-color: var(--red); }
-        .card h2 { font-size: 1.6rem; margin-bottom: 15px; color: var(--dark); }
-        .card ul { list-style: none; margin: 15px 0; }
-        .card ul li::before { content: "✓ "; color: var(--green); font-weight: bold; }
+        /* Service Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+        .service-item { background: #fff; padding: 20px; border-radius: 8px; border: 1px solid #eee; }
+        .service-item h4 { color: var(--green); margin-bottom: 10px; }
 
-        /* Main Content */
-        section { max-width: 1100px; margin: 60px auto; padding: 0 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
-        .feature { background: #fff; padding: 25px; border-radius: 8px; border: 1px solid #eee; }
-        .feature h3 { color: var(--green); margin-bottom: 15px; }
-
-        .cta-main { background: var(--red); color: white; padding: 20px 45px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.5rem; display: inline-block; animation: pulse 2s infinite; }
+        .floating-call { position: fixed; bottom: 30px; right: 20px; width: 65px; height: 65px; background: var(--red); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 30px; text-decoration: none; z-index: 2000; box-shadow: 0 5px 15px rgba(0,0,0,0.3); animation: pulse 2s infinite; }
         @keyframes pulse { 0% {box-shadow: 0 0 0 0 rgba(211,47,47,0.7)} 70% {box-shadow: 0 0 0 15px rgba(211,47,47,0)} 100% {box-shadow: 0 0 0 0 rgba(211,47,47,0)} }
 
-        .floating-call { position: fixed; bottom: 30px; right: 20px; width: 65px; height: 65px; background: var(--red); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 30px; text-decoration: none; z-index: 999; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
-
-        footer { background: var(--dark); color: #999; padding: 50px 20px; text-align: center; }
-        footer a { color: #fff; text-decoration: none; margin: 0 10px; }
+        footer { background: var(--dark); color: #999; padding: 40px 20px; text-align: center; }
+        footer a { color: #fff; margin: 0 10px; text-decoration: none; font-size: 0.85rem; }
     </style>
 </head>
 <body>
 
-    <div class="trust-strip">
-        <span>✓ EX-PESTOKIL SENIOR TECH</span> | <span>✓ 24/7 RAPID RESPONSE</span> | <span>✓ UNMARKED VEHICLES</span> | <span>✓ FULLY INSURED</span>
-    </div>
+    <nav>
+        <a href="/" class="logo-text">Welsh Town & Country</a>
+        <div class="nav-links">
+            <a href="https://merthyr.welshtownandcountry.co.uk">Merthyr Hub</a>
+            <a href="https://brecon.welshtownandcountry.co.uk">Brecon Hub</a>
+            <a href="https://neath.welshtownandcountry.co.uk">Neath Hub</a>
+        </div>
+    </nav>
 
     <header>
-        <h1>Welsh Town & Country Pest Services</h1>
-        <p>David's Specialist Vermin Solutions for Merthyr, Neath & Brecon.</p>
-        <a href="tel:07375303124" class="cta-main">07375 303124</a>
+        <h1>National Standards • Local Response</h1>
+        <p>David: Ex-Pestokil Senior Technician serving Homeowners & Landlords.</p>
+        <a href="tel:07375303124" style="background:var(--red); color:white; padding:15px 35px; border-radius:50px; text-decoration:none; font-weight:bold; margin-top:20px;">07375 303124</a>
     </header>
 
-    <div class="bridge">
-        <div class="card">
-            <h2>Domestic & Home</h2>
-            <p>Fast, discreet elimination of household pests. We arrive in unmarked vans to protect your privacy.</p>
-            <ul>
-                <li>Traditional Mole Trapping</li>
-                <li>Wasp Nest Removal</li>
-                <li>Rat & Mouse Proofing</li>
-                <li>Squirrel & Bird Control</li>
-            </ul>
-            <p style="font-weight: bold; color: var(--red);">Available 24/7 – Call David</p>
-        </div>
-        <div class="card urgent">
-            <h2>Landlords & Business</h2>
-            <p>Ensuring <strong>Awaab's Law</strong> and <strong>Red Tractor</strong> compliance through technical expertise and professional logs.</p>
-            <ul>
-                <li>CCTV Drain Rat Surveys</li>
-                <li>Bed Bug Heat Treatment</li>
-                <li>Farm Assurance Audits</li>
-                <li>Contract Management</li>
-            </ul>
-            <p style="font-weight: bold; color: var(--red);">Compliance Certificates Provided</p>
-        </div>
-    </div>
+    <section class="hub-bridge">
+        <a href="https://merthyr.welshtownandcountry.co.uk" class="hub-card">
+            <h3>Merthyr Hub</h3>
+            <p>Specialist Rat Drainage Surveys & Valleys Emergency Response.</p>
+            <span>Visit Merthyr Site →</span>
+        </a>
+        <a href="https://brecon.welshtownandcountry.co.uk" class="hub-card">
+            <h3>Brecon Hub</h3>
+            <p>Red Tractor Farm Assurance & Traditional Mole Trapping.</p>
+            <span>Visit Brecon Site →</span>
+        </a>
+        <a href="https://neath.welshtownandcountry.co.uk" class="hub-card">
+            <h3>Neath Hub</h3>
+            <p>Local response for Wasps, Rodents & Heat Treatments.</p>
+            <span>Visit Neath Site →</span>
+        </a>
+    </section>
 
-    <section>
-        <div style="text-align: center; margin-bottom: 50px;">
-            <h2 style="font-size: 2.5rem;">Stopping Pests at the Root Cause</h2>
-            <p style="max-width: 800px; margin: 20px auto; font-size: 1.2rem;">Don't settle for basic baiting. David uses his <strong>Ex-Pestokil Senior Technician</strong> background to solve structural failures that allow pests to return.</p>
-        </div>
-
+    <main style="max-width:1100px; margin:auto; padding:20px;">
+        <h2 style="text-align:center; margin-bottom:30px;">David's Technical Specialist Services</h2>
         <div class="grid">
-            <div class="feature">
-                <h3>CCTV Drain Surveys</h3>
-                <p>90% of rat infestations in Welsh terrace lofts are caused by broken Victorian drainage. We use HD cameras to find the breach and install rat valves to stop them forever.</p>
-            </div>
-            <div class="feature">
-                <h3>120°C Thermal Shock</h3>
-                <p>We use high-heat dry steam for Bed Bugs and Fleas. It kills eggs and adults instantly without the need for heavy chemical residue in your home.</p>
-            </div>
-            <div class="feature">
-                <h3>Traditional Mole Trapping</h3>
-                <p>100% poison-free methods for gardens, estates, and farms. Safe for livestock, silage, and pets. Guaranteed clearance across the valleys.</p>
+            <div class="service-item">
+                <h4>CCTV Drain Surveys</h4>
+                <p>90% of rat issues in Merthyr and Neath lofts come from broken Victorian drains. David finds them and fixes them forever.</p>
+                            </div>
+            <div class="service-item">
+                <h4>120°C Thermal Shock</h4>
+                <p>Instantly eliminate Bed Bugs and Fleas using high-heat dry steam. Safe for homes, children, and pets.</p>
+                            </div>
+            <div class="service-item">
+                <h4>Traditional Mole Trapping</h4>
+                <p>100% poison-free clearance for farms, estates, and domestic lawns. Guaranteed results across rural Wales.</p>
             </div>
         </div>
-    </section>
-
-    <section style="background: #eee; padding: 40px; border-radius: 12px; text-align: center;">
-        <h2>Serving the Heads of the Valleys 24/7</h2>
-        <p style="margin-bottom: 20px;">David provides immediate response to the following postcode areas:</p>
-        <div style="font-weight: bold; color: var(--green); display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-            <span>📍 Merthyr Tydfil (CF47)</span>
-            <span>📍 Neath (SA11)</span>
-            <span>📍 Brecon (LD3)</span>
-            <span>📍 Ebbw Vale (NP23)</span>
-            <span>📍 Tredegar (NP22)</span>
-            <span>📍 Resolven (Base Hub)</span>
-        </div>
-    </section>
+    </main>
 
     <footer>
-        <p>© 2026 Welsh Town & Country Pest Services</p>
-        <p style="margin: 15px 0;">David: Ex-Pestokil Senior Field Technician | RSPH Level 2 Certified</p>
-        <div style="margin-top: 20px;">
+        <p>© 2026 Welsh Town & Country Pest Services | David: Ex-Pestokil Specialist</p>
+        <div style="margin-top:15px;">
             <a href="https://merthyr.welshtownandcountry.co.uk">Merthyr Hub</a> | 
             <a href="https://brecon.welshtownandcountry.co.uk">Brecon Hub</a> | 
             <a href="https://neath.welshtownandcountry.co.uk">Neath Hub</a>
         </div>
     </footer>
 
-    <a href="tel:07375303124" class="floating-call" aria-label="Call David Now">📞</a>
+    <a href="tel:07375303124" class="floating-call">📞</a>
 
 </body>
 </html>

@@ -4,9 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Welsh Mole Catcher | Mole & Rat Control Across Wales</title>
+<title>Welsh Mole Catcher | Traditional Mole Trapping & Rat Control Wales</title>
 
-<meta name="description" content="Welsh Mole Catcher provides specialist traditional mole trapping and rural pest services including rats, mice, and farm pests across South & Mid Wales. Operated by David, former senior Pestokil technician.">
+<meta name="description" content="Specialist traditional mole trapping and rural rat control across Wales. David, an experienced ex-Pestokil field technician, provides poison-free mole catching for farms, gardens, and paddocks.">
+<meta name="keywords" content="mole catcher wales, traditional mole trapping, rat control rural wales, farm pest control, mole man wales, SA18 pest control, LD3 mole catching, David mole catcher">
 
 <link rel="canonical" href="https://www.welshmolecatcher.co.uk/">
 
@@ -16,105 +17,131 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": ["LocalBusiness", "PestControlService"],
   "name": "Welsh Mole Catcher",
   "url": "https://www.welshmolecatcher.co.uk/",
+  "logo": "https://www.welshmolecatcher.co.uk/images/logo.png",
   "telephone": "+447375303124",
   "priceRange": "££",
-  "description": "Specialist traditional mole trapping and rural pest services across Wales including rats, mice, and farm pests.",
+  "description": "Expert traditional mole trapping and rural rodent control across South and Mid Wales. Operated by David, a specialist ex-Pestokil field technician.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "11 Glynneath Road",
+    "addressLocality": "Resolven",
+    "addressRegion": "Neath Port Talbot",
+    "postalCode": "SA11 4DP",
+    "addressCountry": "GB"
+  },
   "sameAs": [
-    "https://www.welshtownandcountry.co.uk"
+    "https://neath.welshtownandcountry.co.uk",
+    "https://merthyr.welshtownandcountry.co.uk",
+    "https://www.facebook.com/profile.php?id=61564861332160"
   ],
-  "areaServed": {
-    "@type": "AdministrativeArea",
-    "name": "Wales"
-  }
+  "areaServed": [
+    {"@type": "AdministrativeArea", "name": "South Wales"},
+    {"@type": "AdministrativeArea", "name": "Mid Wales"},
+    {"@type": "AdministrativeArea", "name": "Powys"},
+    {"@type": "AdministrativeArea", "name": "Neath Port Talbot"},
+    {"@type": "AdministrativeArea", "name": "Carmarthenshire"}
+  ]
 }
 </script>
 
 <style>
-:root { --green:#2e4d2e; --dark:#1a1916; --gold:#ffcc00; --red:#c62828; }
-body{font-family:Segoe UI,Tahoma,sans-serif;margin:0;color:#2d2a26;line-height:1.6;background:#fcfbf7}
-nav{background:#fff;padding:1rem;border-bottom:2px solid #eee;display:flex;justify-content:space-between;align-items:center}
+:root { --green:#2e4d2e; --dark:#1a1916; --gold:#ffcc00; --red:#c62828; --light:#fcfbf7; }
+body{font-family:'Segoe UI',Roboto,Helvetica,sans-serif;margin:0;color:#2d2a26;line-height:1.6;background:var(--light)}
+nav{background:#fff;padding:1rem;border-bottom:2px solid #eee;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1000}
 nav a{text-decoration:none;font-weight:bold}
-header{background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),url("images/farm_background.jpg");color:#fff;text-align:center;padding:80px 20px}
-header h1{color:var(--gold);font-size:clamp(2rem,5vw,3rem)}
-section{max-width:1100px;margin:60px auto;padding:0 20px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
-.card{background:#fff;border-radius:10px;padding:25px;box-shadow:0 10px 30px rgba(0,0,0,.1)}
-.card a{color:var(--red);font-weight:bold;text-decoration:none}
-footer{background:var(--dark);color:#aaa;padding:40px 20px;text-align:center}
-.floating-call{position:fixed;bottom:30px;right:20px;width:65px;height:65px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:30px;text-decoration:none}
+header{background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url("images/farm_background.jpg") center/cover;color:#fff;text-align:center;padding:100px 20px}
+header h1{color:var(--gold);font-size:clamp(2.2rem,6vw,3.5rem);margin-bottom:10px}
+.tech-tag{background:var(--gold);color:var(--dark);padding:5px 15px;border-radius:20px;font-weight:bold;display:inline-block;margin-bottom:20px}
+section{max-width:1100px;margin:40px auto;padding:0 20px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px;margin-top:30px}
+.card{background:#fff;border-radius:10px;padding:30px;box-shadow:0 10px 30px rgba(0,0,0,.08);border-bottom:4px solid var(--green);transition:transform 0.3s}
+.card:hover{transform:translateY(-5px)}
+.card h3{margin-top:0;color:var(--green)}
+.card a{color:var(--red);font-weight:bold;text-decoration:none;display:inline-block;margin-top:10px}
+.comparison-box{background:#eef2ee;padding:30px;border-radius:12px;border:1px solid #c8d6c8}
+footer{background:var(--dark);color:#eee;padding:60px 20px;text-align:center}
+footer a{color:var(--gold);text-decoration:none}
+.floating-call{position:fixed;bottom:30px;right:20px;width:65px;height:65px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:30px;text-decoration:none;box-shadow:0 5px 15px rgba(0,0,0,0.3);z-index:1001;animation:pulse 2s infinite}
+@keyframes pulse{0%{transform:scale(0.95)}70%{transform:scale(1)}100%{transform:scale(0.95)}}
 </style>
 </head>
 
 <body>
 
 <nav>
-  <a href="/" style="color:var(--green)">Welsh Mole Catcher</a>
-  <a href="tel:+447375303124" style="color:var(--red)">📞 Call David</a>
+  <a href="/" style="color:var(--green);font-size:1.2rem;">Welsh Mole Catcher</a>
+  <div class="nav-links">
+    <a href="tel:+447375303124" style="color:var(--red)">📞 07375 303124</a>
+  </div>
 </nav>
 
 <header>
-  <h1>Traditional Mole & Rat Control for Wales</h1>
-  <p>Specialist mole trapping and rural pest expertise, covering rats, mice, and farm pests for farms and country properties.</p>
+  <div class="tech-tag">Ex-Pestokil Trained Field Technician</div>
+  <h1>Traditional Mole Trapping & Specialist Rat Control</h1>
+  <p style="font-size:1.2rem;max-width:800px;margin:auto;">Expert, poison-free mole catching and rural pest solutions for farms, paddocks, and country estates across South and Mid Wales.</p>
 </header>
 
 <section>
-  <h2>Expert Mole & Rat Control Across Wales</h2>
-  <p>
-    Welsh Mole Catcher specialises in <strong>traditional mole trapping</strong> and <strong>rodent control</strong> for
-    farms, paddocks, fields and large gardens across South and Mid Wales.
-  </p>
-  <p>
-    Operated by David, a former senior Pestokil technician, the service combines decades of rural pest experience
-    with professional farm support.
-  </p>
+  <div style="text-align:center;margin-bottom:40px;">
+    <h2>Specialist Rural Pest Protection</h2>
+    <p style="font-size:1.1rem;max-width:900px;margin:auto;">
+      Welsh Mole Catcher is operated by <strong>David</strong>, an experienced field technician with a background at a leading national pest firm. We specialize in <strong>traditional, non-toxic mole trapping</strong>—a skilled craft that ensures your land is protected without the use of dangerous gasses or chemicals.
+    </p>
+  </div>
+  
+  <div class="comparison-box">
+    <h3>Why Choose Traditional Trapping?</h3>
+    <p>Unlike DIY 'gas' alternatives, traditional claw and scissor traps are the most humane and effective way to clear moles from livestock grazing land and manicured lawns. David provides a <strong>'No Catch, No Fee'</strong> guarantee for mole control in most local areas.</p>
+  </div>
 </section>
 
-<section>
-  <h2>Areas & Services</h2>
+
+
+<section id="hubs">
+  <h2 style="text-align:center;">Our Service Hubs & Specialist Areas</h2>
+  <p style="text-align:center;">For general pest control including wasps, squirrels, and emergency rodent proofing, visit our regional hubs:</p>
   <div class="cards">
     <div class="card">
-      <h3>Brecon & Powys</h3>
-      <p>Mole trapping, rat control, and farm pest services for paddocks, grazing land, and smallholdings.</p>
-      <a href="https://brecon.welshtownandcountry.co.uk/">Visit Brecon Pest Control →</a>
+      <h3>📍 Brecon & Powys (LD3)</h3>
+      <p>Agricultural pest management and Red Tractor compliant farm audits. Specializing in large-scale rat control and mole trapping for smallholdings.</p>
+      <a href="https://brecon.welshtownandcountry.co.uk/">Explore Brecon Hub →</a>
     </div>
 
     <div class="card">
-      <h3>Neath & Upper Swansea Valley</h3>
-      <p>Rodent management, mole catching, and rural pest services for farms and country properties.</p>
-      <a href="https://neath.welshtownandcountry.co.uk/">Visit Neath Pest Control →</a>
+      <h3>📍 Neath & Resolven (SA10/11)</h3>
+      <p>Rapid 24/7 response for rats, mice, and moles across the Neath Valley. Specialist in <strong>CCTV Drain Surveys</strong> to stop rat entry permanently.</p>
+      <a href="https://neath.welshtownandcountry.co.uk/">Explore Neath Hub →</a>
     </div>
 
     <div class="card">
-      <h3>Merthyr Tydfil & Valleys</h3>
-      <p>Mole control, rat management, and land protection services across Merthyr and surrounding valleys.</p>
-      <a href="https://merthyr.welshtownandcountry.co.uk/">Visit Merthyr Pest Control →</a>
+      <h3>📍 Merthyr & Valleys (CF47/48)</h3>
+      <p>Urban and rural pest solutions. From commercial bird proofing to traditional mole catching in the surrounding hills and parks.</p>
+      <a href="https://merthyr.welshtownandcountry.co.uk/">Explore Merthyr Hub →</a>
     </div>
   </div>
 </section>
 
-<section>
-  <h2>Working With Welsh Town & Country</h2>
-  <p>
-    For complete pest control services, including wasps, mice, and larger farm infestations,
-    Welsh Mole Catcher collaborates with
-    <a href="https://brecon.welshtownandcountry.co.uk" style="color:var(--red);font-weight:bold;">
-      Welsh Town & Country Pest Services
-    </a>.
-  </p>
-  <p>
-    This ensures specialist mole and rat expertise supports a comprehensive professional pest solution.
-  </p>
+<section style="text-align:center; background:var(--dark); color:#fff; padding:40px; border-radius:15px;">
+  <h2 style="color:var(--gold);">Emergency Rural Response</h2>
+  <p>Need a rat catcher or mole man today? David provides direct, expert service without the national call-centre prices.</p>
+  <a href="tel:+447375303124" style="background:var(--red); color:#fff; padding:15px 30px; text-decoration:none; font-weight:bold; border-radius:5px; display:inline-block; margin-top:10px;">📞 Call 07375 303124</a>
 </section>
 
 <footer>
-  <p>© 2026 Welsh Mole Catcher</p>
-  <p>Specialist Mole & Rat Control • Supporting Farms Across Wales</p>
+  <p><strong>Welsh Mole Catcher & Welsh Town & Country Pest Services</strong></p>
+  <p>11 Glynneath Road, Resolven, SA11 4DP</p>
+  <p>© 2026 | <a href="https://www.google.com/search?q=Welsh+Town+%26+Country+Pest+Services" target="_blank">⭐⭐⭐⭐⭐ View Our 5-Star Reviews on Google</a></p>
+  <div style="margin-top:15px;">
+    <a href="https://www.welshtownandcountry.co.uk" style="margin:0 10px;">Main Website</a> | 
+    <a href="https://neath.welshtownandcountry.co.uk" style="margin:0 10px;">Neath Hub</a> | 
+    <a href="https://merthyr.welshtownandcountry.co.uk" style="margin:0 10px;">Merthyr Hub</a>
+  </div>
 </footer>
 
-<a href="tel:+447375303124" class="floating-call" aria-label="Call David">📞</a>
+<a href="tel:+447375303124" class="floating-call" aria-label="Call David Now">📞</a>
 
 </body>
 </html>

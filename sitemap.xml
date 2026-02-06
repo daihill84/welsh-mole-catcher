@@ -1,19 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
   <url>
     <loc>https://www.welshmolecatcher.co.uk/</loc>
-    <lastmod>2026-01-01</lastmod>
+    <lastmod>2026-02-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.welshmolecatcher.co.uk/farm-pest-control.html</loc>
-    <lastmod>2026-01-01</lastmod>
+    <loc>https://www.welshmolecatcher.co.uk/wasp-nest-removal.html</loc>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.welshmolecatcher.co.uk/gallery.html</loc>
-    <lastmod>2026-01-01</lastmod>
-    <priority>0.7</priority>
+    <loc>https://www.welshmolecatcher.co.uk/rat-control.html</loc>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://www.welshmolecatcher.co.uk/farm-pest-control.html</loc>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.welshmolecatcher.co.uk/gallery.html</loc>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+</urlset>
